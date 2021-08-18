@@ -5,19 +5,15 @@ using Quitanda.CrossCutting.Filter;
 using Quitanda.Domain.Entidades;
 using Quitanda.Services.Interface.Base;
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Net;
-using System.Threading.Tasks;
 
 namespace Quitanda.API.Controllers
 {
     [Route("api/v1/fruta")]
-    public class FrutaController : BaseController<Fruta,FrutaFilter,FrutaDTO, FrutaInsertDTO,FrutaUpdateDTO>
+    public class FrutaController : BaseController<Fruta, FrutaFilter, FrutaDTO, FrutaInsertDTO, FrutaUpdateDTO>
     {
         public FrutaController(IFrutaService frutaService) : base(frutaService)
         {
-
         }
 
         [HttpGet]
@@ -43,7 +39,7 @@ namespace Quitanda.API.Controllers
         [ProducesResponseType((int)HttpStatusCode.OK)]
         [ProducesResponseType((int)HttpStatusCode.BadRequest)]
         [ProducesResponseType((int)HttpStatusCode.Unauthorized)]
-        [ProducesResponseType((int)HttpStatusCode.InternalServerError)]       
+        [ProducesResponseType((int)HttpStatusCode.InternalServerError)]
         public new ActionResult Add([FromBody] FrutaInsertDTO model)
         {
             return base.Add(model);
@@ -53,7 +49,7 @@ namespace Quitanda.API.Controllers
         //[ProducesResponseType((int)HttpStatusCode.OK)]
         //[ProducesResponseType((int)HttpStatusCode.BadRequest)]
         //[ProducesResponseType((int)HttpStatusCode.Unauthorized)]
-        //[ProducesResponseType((int)HttpStatusCode.InternalServerError)]        
+        //[ProducesResponseType((int)HttpStatusCode.InternalServerError)]
         //public new ActionResult Update([FromRoute] Guid id, [FromBody] FrutaUpdateDTO model)
         //{
         //    return base.Update(id, model);
@@ -63,7 +59,7 @@ namespace Quitanda.API.Controllers
         [ProducesResponseType((int)HttpStatusCode.OK)]
         [ProducesResponseType((int)HttpStatusCode.NotFound)]
         [ProducesResponseType((int)HttpStatusCode.Unauthorized)]
-        [ProducesResponseType((int)HttpStatusCode.InternalServerError)]      
+        [ProducesResponseType((int)HttpStatusCode.InternalServerError)]
         public new ActionResult Delete(Guid id)
         {
             return base.Delete(id);
@@ -72,7 +68,7 @@ namespace Quitanda.API.Controllers
         [HttpPost("/compra")]
         [ProducesResponseType((int)HttpStatusCode.OK)]
         [ProducesResponseType((int)HttpStatusCode.NotFound)]
-        public ActionResult Comprar( Guid id, int quantidade)
+        public ActionResult Comprar(Guid id, int quantidade)
         {
             var result = ((IFrutaService)_service).Comprar(id, quantidade);
             return result != null ? Ok(result) : NotFound();

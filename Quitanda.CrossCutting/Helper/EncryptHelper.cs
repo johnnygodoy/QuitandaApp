@@ -1,13 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace Quitanda.CrossCutting.Helper
 {
-    public static  class EncryptHelper
+    public static class EncryptHelper
     {
         public static string EncryptPassword(this string senha)
         {

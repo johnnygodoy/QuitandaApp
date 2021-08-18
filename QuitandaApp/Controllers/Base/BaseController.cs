@@ -7,7 +7,6 @@ using Quitanda.Services.Interface.Base;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 
 namespace Quitanda.API.Controllers.Base
 {
@@ -23,7 +22,7 @@ namespace Quitanda.API.Controllers.Base
         protected ActionResult Add(TInsertDto dto)
         {
             if (!ModelState.IsValid)
-                throw new EntityValidationException();               
+                throw new EntityValidationException();
 
             var entity = MapperHelper.Map<TInsertDto, T>(dto);
             var response = _service.Create(entity);
@@ -34,7 +33,7 @@ namespace Quitanda.API.Controllers.Base
         protected ActionResult Update(Guid id, TUpdateDto dto)
         {
             if (!ModelState.IsValid)
-                throw new EntityValidationException();              
+                throw new EntityValidationException();
 
             dto.Id = id;
             var entity = MapperHelper.Map<TUpdateDto, T>(dto);

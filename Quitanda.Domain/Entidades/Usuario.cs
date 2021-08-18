@@ -1,16 +1,15 @@
 ﻿using Quitanda.Domain.Base;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.ComponentModel.DataAnnotations;
 
 namespace Quitanda.Domain.Entidades
 {
-   public class Usuario:EntityBase
+    public class Usuario : EntityBase
     {
+        [Required]
         public string Nome { get; set; }
+        [Required]
         public string Login { get; set; }
+        [Required]
         public string Senha { get; set; }
     }
 }

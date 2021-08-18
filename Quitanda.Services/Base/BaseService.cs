@@ -4,9 +4,6 @@ using Quitanda.Repository.Interface;
 using Quitanda.Services.Interface.Base;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Quitanda.Services.Base
 {
@@ -48,5 +45,3 @@ namespace Quitanda.Services.Base
         }
     }
 }
-
-

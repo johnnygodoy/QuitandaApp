@@ -1,19 +1,15 @@
 ﻿using AutoMapper;
 using Quitanda.CrossCutting.DTO.Fruta;
 using Quitanda.Domain.Entidades;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace Quitanda.API.Mapper
 {
-    public class MapperEntityToDto :Profile
+    public class MapperEntityToDto : Profile
     {
         public MapperEntityToDto()
         {
-            CreateMap<Fruta,FrutaInsertDTO>();
-            CreateMap<Fruta,FrutaUpdateDTO>();
+            CreateMap<Fruta, FrutaInsertDTO>();
+            CreateMap<Fruta, FrutaUpdateDTO>();
             CreateMap<Fruta, FrutaDTO>();
 
             //CreateMap<UserInsertDTO, User>()
@@ -23,4 +19,3 @@ namespace Quitanda.API.Mapper
         }
     }
 }
-

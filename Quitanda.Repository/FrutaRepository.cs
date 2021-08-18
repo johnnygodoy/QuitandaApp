@@ -7,8 +7,6 @@ using Quitanda.Repository.Mock;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Quitanda.Repository
 {
@@ -16,7 +14,6 @@ namespace Quitanda.Repository
     {
         public FrutaRepository(DataContext context) : base(context)
         {
-
         }
 
         public override List<Fruta> GetAll(FrutaFilter filter)
@@ -33,7 +30,7 @@ namespace Quitanda.Repository
 
         public override Fruta Find(Guid id)
         {
-            return  MockHelper.GetFrutas().Where(w =>w.Id == id).FirstOrDefault();
+            return MockHelper.GetFrutas().Where(w => w.Id == id).FirstOrDefault();
         }
 
         public override void Remove(Guid id)
@@ -42,7 +39,7 @@ namespace Quitanda.Repository
             if (fruta != null)
             {
                 fruta.Active = false;
-            }          
+            }
         }
 
         public override Fruta Update(Fruta dto)
@@ -63,8 +60,7 @@ namespace Quitanda.Repository
 
         public Fruta Comprar(Guid id)
         {
-         return MockHelper.GetFrutas().Where(w => w.Active && w.Id ==id).ToList().FirstOrDefault();
-          
+            return MockHelper.GetFrutas().Where(w => w.Active && w.Id == id).ToList().FirstOrDefault();
         }
     }
 }

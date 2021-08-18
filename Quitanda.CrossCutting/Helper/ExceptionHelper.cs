@@ -6,7 +6,6 @@ using System;
 using System.Net;
 using System.Threading.Tasks;
 
-
 namespace Quitanda.CrossCutting.Helper
 {
     public class ExceptionHelper
@@ -45,7 +44,7 @@ namespace Quitanda.CrossCutting.Helper
                 case NotFoundException _:
                     code = HttpStatusCode.NotFound;
                     response = new ErrorMessageModel("Registro não encontrado");
-                    break;                
+                    break;
 
                 default:
                     code = HttpStatusCode.InternalServerError;

@@ -5,15 +5,13 @@ using Quitanda.Repository.Interface;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Quitanda.Repository.Base
 {
-
     public class BaseRepository<T, TFilter> : IRepositoryBase<T, TFilter> where T : EntityBase where TFilter : BaseFilter
     {
         protected readonly DataContext _context;
+
         public BaseRepository(DataContext context)
         {
             _context = context;
@@ -84,5 +82,3 @@ namespace Quitanda.Repository.Base
         }
     }
 }
-
-

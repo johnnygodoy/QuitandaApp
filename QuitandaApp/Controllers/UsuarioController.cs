@@ -5,10 +5,7 @@ using Quitanda.CrossCutting.Filter.Usuarios;
 using Quitanda.Domain.Entidades;
 using Quitanda.Services.Interface.Base;
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Net;
-using System.Threading.Tasks;
 
 namespace Quitanda.API.Controllers
 {
@@ -17,14 +14,12 @@ namespace Quitanda.API.Controllers
     {
         public UsuarioController(IUsuarioService usuarioService) : base(usuarioService)
         {
-
         }
 
         [HttpGet]
         [ProducesResponseType((int)HttpStatusCode.OK)]
         [ProducesResponseType((int)HttpStatusCode.NotFound)]
         [ProducesResponseType((int)HttpStatusCode.InternalServerError)]
-
         public ActionResult GetAll(string term)
         {
             var filter = new UsuariosFilter(term);
@@ -54,7 +49,7 @@ namespace Quitanda.API.Controllers
         //[ProducesResponseType((int)HttpStatusCode.OK)]
         //[ProducesResponseType((int)HttpStatusCode.BadRequest)]
         //[ProducesResponseType((int)HttpStatusCode.Unauthorized)]
-        //[ProducesResponseType((int)HttpStatusCode.InternalServerError)]        
+        //[ProducesResponseType((int)HttpStatusCode.InternalServerError)]
         //public new ActionResult Update([FromRoute] Guid id, [FromBody] FrutaUpdateDTO model)
         //{
         //    return base.Update(id, model);
@@ -71,4 +66,3 @@ namespace Quitanda.API.Controllers
         }
     }
 }
-

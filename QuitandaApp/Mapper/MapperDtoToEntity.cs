@@ -3,10 +3,6 @@ using Quitanda.CrossCutting.DTO.Fruta;
 using Quitanda.CrossCutting.DTO.Usuario;
 using Quitanda.CrossCutting.Helper;
 using Quitanda.Domain.Entidades;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace Quitanda.API.Mapper
 {
@@ -24,5 +20,4 @@ namespace Quitanda.API.Mapper
                 .ForMember(to => to.Senha, map => map.MapFrom(from => EncryptHelper.EncryptPassword(from.Senha)));
         }
     }
-
 }

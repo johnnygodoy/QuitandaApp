@@ -7,8 +7,6 @@ using Quitanda.Repository.Mock;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Quitanda.Repository
 {
@@ -16,12 +14,10 @@ namespace Quitanda.Repository
     {
         public UsuarioRepository(DataContext context) : base(context)
         {
-
         }
 
         public override List<Usuario> GetAll(UsuariosFilter filter)
         {
-           
             var listUsuarios = MockHelper.GetUsuarios().Where(w => w.Active).ToList();
 
             if (!string.IsNullOrWhiteSpace(filter.Term))
