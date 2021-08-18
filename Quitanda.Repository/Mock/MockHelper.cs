@@ -20,5 +20,16 @@ namespace Quitanda.Repository.Mock
                    new Fruta{Id=Guid.Parse("5b3800ac-f001-4b16-961e-c4d3911184d8"), Nome = "Uva", QuantidadeEstoque = 10, Active =true }
             };
         }
+
+        public static IList<Usuario> GetUsuarios()
+        {
+
+            return new List<Usuario>
+            {
+                new Usuario{Id=Guid.Parse("730256ee-ca14-4e2b-b72e-edb30fbf8bcc"), Nome = "João", Login = "123", Senha = "123@", Active =true },
+                new Usuario{Id=Guid.Parse("50c0bfa3-bae2-445e-b75f-05946c225370"), Nome = "Bruno", Login = "1233", Senha = "1283@", Active =true },
+                 new Usuario{Id=Guid.Parse("21a052aa-1a94-43f4-a368-1cfe1b52a9b9"), Nome = "Kauan", Login = "244", Senha = "5358@", Active =true }
+            };
+        }
     }
 }

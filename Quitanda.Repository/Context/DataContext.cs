@@ -10,9 +10,10 @@ namespace Quitanda.Repository.Context
 {
     public class DataContext : DbContext
     {
-        //public DbSet<User> User { get; set; }
         public DbSet<Fruta> Fruta { get; set; }
-       
+
+        public DbSet<Usuario> Usuario { get; set; }
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             if (!optionsBuilder.IsConfigured)

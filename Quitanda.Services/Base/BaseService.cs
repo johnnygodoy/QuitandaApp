@@ -1,4 +1,5 @@
 ﻿using Quitanda.CrossCutting.Base;
+using Quitanda.CrossCutting.Exceptions;
 using Quitanda.Repository.Interface;
 using Quitanda.Services.Interface.Base;
 using System;
@@ -31,14 +32,14 @@ namespace Quitanda.Services.Base
         public virtual void Remove(Guid id)
         {
             if (Find(id) == null)
-                throw new Exception();
+                throw new NotFoundException();
 
             Repository.Remove(id);
         }
 
         public virtual T Find(Guid id)
         {
-            return Repository.Find(id) ?? throw new Exception();
+            return Repository.Find(id) ?? throw new NotFoundException();
         }
 
         public virtual List<T> GetAll(TFilter filter)

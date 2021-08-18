@@ -7,6 +7,7 @@ using Microsoft.Extensions.Hosting;
 using Newtonsoft.Json;
 using Quitanda.API.Injection;
 using Quitanda.API.Mapper;
+using Quitanda.CrossCutting.Helper;
 using Swashbuckle.AspNetCore.SwaggerGen;
 using System;
 using System.Collections.Generic;
@@ -41,8 +42,9 @@ namespace QuitandaApp
             {
                 app.UseDeveloperExceptionPage();
             }
+            app.UseMiddleware(typeof(ExceptionHelper));
             // Enable middleware to serve generated Swagger as a JSON endpoint.
-    app.UseSwagger();
+            app.UseSwagger();
 
     // Enable middleware to serve swagger-ui (HTML, JS, CSS, etc.),
     // specifying the Swagger JSON endpoint.

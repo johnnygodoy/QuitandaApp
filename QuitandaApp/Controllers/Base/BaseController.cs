@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Quitanda.CrossCutting.Base;
 using Quitanda.CrossCutting.DTO.Base;
+using Quitanda.CrossCutting.Exceptions;
 using Quitanda.CrossCutting.Helper;
 using Quitanda.Services.Interface.Base;
 using System;
@@ -22,8 +23,7 @@ namespace Quitanda.API.Controllers.Base
         protected ActionResult Add(TInsertDto dto)
         {
             if (!ModelState.IsValid)
-                //throw new EntityValidationException();
-                throw new Exception();
+                throw new EntityValidationException();               
 
             var entity = MapperHelper.Map<TInsertDto, T>(dto);
             var response = _service.Create(entity);
@@ -34,8 +34,7 @@ namespace Quitanda.API.Controllers.Base
         protected ActionResult Update(Guid id, TUpdateDto dto)
         {
             if (!ModelState.IsValid)
-                //throw new EntityValidationException();
-                throw new Exception();
+                throw new EntityValidationException();              
 
             dto.Id = id;
             var entity = MapperHelper.Map<TUpdateDto, T>(dto);
@@ -63,7 +62,7 @@ namespace Quitanda.API.Controllers.Base
         protected ActionResult GetAll(TFilter filter)
         {
             var response = _service.GetAll(filter);
-            return response.Any() ? Ok(MapperHelper.Map<List<T>, List<TDto>>(response)) : throw new Exception();
+            return response.Any() ? Ok(MapperHelper.Map<List<T>, List<TDto>>(response)) : throw new NotFoundException();
         }
     }
 }

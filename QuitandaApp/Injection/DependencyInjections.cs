@@ -18,8 +18,8 @@ namespace Quitanda.API.Injection
            
             services.AddScoped<IFrutaService, FrutaService>();
             services.AddScoped<IFrutaRepository, FrutaRepository>();
-            //services.AddScoped<IUserService, UserService>();
-            //services.AddScoped<IUserRepository, UserRepository>();
+            services.AddScoped<IUsuarioService, UsuarioService>();
+            services.AddScoped<IUsuarioRepository, UsuarioRepository>();
             services.AddSingleton<DataContext>();
         }
     }

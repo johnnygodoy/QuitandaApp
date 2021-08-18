@@ -1,5 +1,7 @@
 ﻿using AutoMapper;
 using Quitanda.CrossCutting.DTO.Fruta;
+using Quitanda.CrossCutting.DTO.Usuario;
+using Quitanda.CrossCutting.Helper;
 using Quitanda.Domain.Entidades;
 using System;
 using System.Collections.Generic;
@@ -16,10 +18,10 @@ namespace Quitanda.API.Mapper
             CreateMap<FrutaUpdateDTO, Fruta>();
             CreateMap<FrutaDTO, Fruta>();
 
-            //CreateMap<UserInsertDTO, User>()
-            //    .ForMember(to => to.Password, map => map.MapFrom(from => EncryptHelper.EncryptPassword(from.Password)));
-
-            //CreateMap<UserUpdateDTO, User>();
+            CreateMap<UsuarioDTO, Usuario>();
+            CreateMap<UsuarioUpdateDTO, Usuario>();
+            CreateMap<UsuarioInsertDTO, Usuario>()
+                .ForMember(to => to.Senha, map => map.MapFrom(from => EncryptHelper.EncryptPassword(from.Senha)));
         }
     }
 
