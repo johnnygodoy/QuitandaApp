@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Quitanda.CrossCutting\Quitanda.CrossCutting.csproj" />
+    <ProjectReference Include="..\Quitanda.Repository\Quitanda.Repository.csproj" />
+  </ItemGroup>
+
+</Project>
